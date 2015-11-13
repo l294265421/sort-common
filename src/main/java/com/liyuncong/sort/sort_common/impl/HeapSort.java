@@ -5,7 +5,6 @@ import com.liyuncong.sort.sort_common.Sort;
 public class HeapSort implements Sort {
 
 	public <T extends Comparable<T>> void sort(T[] a) {
-		// TODO Auto-generated method stub
 		// 最初，堆的长度就是整个数组的长度
 		int heapLength = a.length - 1;
 		buildMaxHeap(a, heapLength);
@@ -18,15 +17,15 @@ public class HeapSort implements Sort {
 		}
 	}
 
-	public int left(int i) {
+	private int left(int i) {
 		return 2 * i;
 	}
 
-	public int right(int i) {
+	private int right(int i) {
 		return 2 * i + 1;
 	}
 
-	public int parent(int i) {
+	private int parent(int i) {
 		// i为根结点
 		if (i == 1) {
 			return 0;

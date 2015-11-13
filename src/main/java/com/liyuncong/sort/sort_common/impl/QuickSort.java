@@ -5,12 +5,10 @@ import com.liyuncong.sort.sort_common.Sort;
 public class QuickSort implements Sort {
 
 	public <T extends Comparable<T>> void sort(T[] a) {
-		// TODO Auto-generated method stub
 		this.sort(a, 0, a.length - 1);
 	}
 	
 	public <T extends Comparable<T>> void sort(T[] a, int p, int r) {
-		// TODO Auto-generated method stub
 		// 确保待排序的子数组中至少有两个元素
 		if (p < r) {
 			int q = this.partition(a, p, r);
