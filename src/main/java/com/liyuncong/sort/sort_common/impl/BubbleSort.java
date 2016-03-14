@@ -2,10 +2,10 @@ package com.liyuncong.sort.sort_common.impl;
 
 import com.liyuncong.sort.sort_common.Sort;
 
-public class BubbleSort implements Sort {
+public class BubbleSort <T extends Comparable<T>> implements Sort<T> {
 
 	@Override
-	public <T extends Comparable<T>> void sort(T[] a) {
+	public void sort(T[] a) {
 		int len = a.length;
 		// 针对前i个元素
 		for(int i = len - 1; i >= 1; i--) {
@@ -22,7 +22,7 @@ public class BubbleSort implements Sort {
 
 	public static void main(String[] args) {
 		Integer[] arr = new Integer[]{0, 3, 1, 5, 12, 7};
-		new BubbleSort().sort(arr);
+		new BubbleSort<Integer>().sort(arr);
 		for (int i = 0; i < arr.length; i++) {
 			System.out.println(arr[i]);
 		}

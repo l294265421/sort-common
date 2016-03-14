@@ -4,10 +4,10 @@ import java.lang.reflect.Array;
 
 import com.liyuncong.sort.sort_common.Sort;
 
-public class MergeSort implements Sort {
+public class MergeSort<T extends Comparable<T>> implements Sort<T> {
 
 	@SuppressWarnings("unchecked")
-	private <T extends Comparable<T>> void merge(T[] a, int p, int q, int r) {
+	private void merge(T[] a, int p, int q, int r) {
 		// 获得数组left的长度
 		int n1 = q - p + 1;
 		// 获得数组right的长度
@@ -71,7 +71,7 @@ public class MergeSort implements Sort {
 		}
 	}
 
-	public <T extends Comparable<T>> void sort(T[] a) {
+	public void sort(T[] a) {
 		// TODO Auto-generated method stub
 		// 默认情况下，对数组从头到尾排序
 		int p = 0;
@@ -80,7 +80,7 @@ public class MergeSort implements Sort {
 
 	}
 
-	private <T extends Comparable<T>> void sort(T[] a, int p, int r) {
+	private void sort(T[] a, int p, int r) {
 		// TODO Auto-generated method stub
 		if (p < r) {
 			int q = (p + r) / 2;
@@ -129,7 +129,7 @@ public class MergeSort implements Sort {
 	public static void main(String[] args) {
 		Integer[] a = new Integer[] { 1, 8, 2, 3, 5 };
 //		new MergeSort().merge(a, 0, 1, 4);
-		new MergeSort().sort(a);
+		new MergeSort<Integer>().sort(a);
 		for (int i = 0; i < a.length; i++) {
 			System.out.println(a[i]);
 		}

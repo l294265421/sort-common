@@ -2,9 +2,9 @@ package com.liyuncong.sort.sort_common.impl;
 
 import com.liyuncong.sort.sort_common.Sort;
 
-public class InsertSort implements Sort {
+public class InsertSort<T extends Comparable<T>> implements Sort<T> {
 
-	public <T extends Comparable<T>> void sort(T[] a) {
+	public void sort(T[] a) {
 		// TODO Auto-generated method stub
 		int length = a.length;
 		for(int i = 0; i < length; i++) {
