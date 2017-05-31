@@ -12,7 +12,7 @@ public class QuickSort<T extends Comparable<T>> implements Sort<T> {
 		// 确保待排序的子数组中至少有两个元素
 		if (p < r) {
 			int q = this.partition(a, p, r);
-			sort(a, 0, q - 1);
+			sort(a, p, q - 1);
 			sort(a, q + 1, r);
 		}
 	}
@@ -49,7 +49,7 @@ public class QuickSort<T extends Comparable<T>> implements Sort<T> {
 	}
 	
 	public static void main(String[] args) {
-		Integer[] heap = new Integer[]{0, 3, 1, 5, 12, 7};
+		Integer[] heap = new Integer[]{5, 12, 0, 3, 1, 7};
 		new QuickSort<Integer>().sort(heap);
 		for (int i = 0; i < heap.length; i++) {
 			System.out.println(heap[i]);
